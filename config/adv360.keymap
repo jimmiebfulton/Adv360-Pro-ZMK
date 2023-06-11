@@ -18,6 +18,11 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+&caps_word {
+    mods = <(RSHFT | RSHFT>;
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
   behaviors {
     #include "macros.dtsi"
@@ -31,11 +36,6 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
-  };
-
-  &caps_word {
-    mods = <(RSHFT | RSHFT>;
-    continue-list = <UNDERSCORE MINUS>;
   };
 
     keymap {
