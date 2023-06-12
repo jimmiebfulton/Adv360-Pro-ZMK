@@ -39,6 +39,13 @@
         global-quick-tap;
         bindings = <&kp>, <&kp>;
     };
+
+    cwm: caps_word_mods {
+        compatible = "zmk,behavior-caps-word";
+        label = "CUSTOM_CAPS";
+        #binding-cells = <0>;
+        continue-list = <BACKSPACE UNDERSCORE DEL MINUS UNDERSCORE>;
+    };
   };
 
     combos {
@@ -46,7 +53,7 @@
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <47 60>;
-            bindings = <&caps_word>;
+            bindings = <&cwm>;
         };
     };
 
