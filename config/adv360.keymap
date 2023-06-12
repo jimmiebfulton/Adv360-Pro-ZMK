@@ -39,10 +39,6 @@
         global-quick-tap;
         bindings = <&kp>, <&kp>;
     };
-
-    &caps_word {
-        continue-list = <UNDERSCORE MINUS BSPC DEL>;
-    };
   };
 
     combos {
