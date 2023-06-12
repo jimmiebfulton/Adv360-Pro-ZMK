@@ -18,6 +18,14 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+#define QUERTY    0
+#define KP        1
+#define FUN       2
+#define NAV       3
+#define SYM       4
+#define MOD       5
+
+
 / {
   behaviors {
     #include "macros.dtsi"
@@ -26,48 +34,39 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
+        tapping-term-ms = <220>;
         quick_tap_ms = <175>;
-        flavor = "tap-preferred";
+        flavor = "hold-preferred";
         bindings = <&kp>, <&kp>;
-    };
-
-    /omit-if-no-ref/ caps_word: behavior_caps_word {
-        compatible = "zmk,behavior-caps-word";
-        label = "CAPS_WORD";
-        #binding-cells = <0>;
-        continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
-        mods = <(MOD_LSFT | RSHFT)>;
     };
   };
 
     keymap {
         compatible = "zmk,keymap";
 
-
-        default_layer {
+        default_QUERTY {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog 1                                                                &mo 3  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
+ &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog KP                                                                &mo MOD  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
    &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                &none   &kp Y   &kp U      &kp I     &kp O     &kp P   &kp BSLH
-   &kp ESC      &mt LCTL A     &mt LALT S     &mt LSHFT D      &mt LGUI F   &kp G               &none  &kp LGUI  &kp LALT                  &kp RCTRL   &kp RGUI      &none   &kp H   &mt RGUI J      &mt RSHFT K     &mt RALT L  &mt RCTRL SEMI    &kp SQT
+   &kp ESC      &hm LCTL A     &hm LALT S     &hm LSHFT D      &hm LGUI F   &kp G               &none  &kp LGUI  &kp LALT                  &kp RCTRL   &kp RGUI      &none   &kp H   &hm RGUI J      &hm RSHFT K     &hm RALT L  &hm RCTRL SEMI    &kp SQT
  &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                &kp HOME                  &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo 2
+     &mo FUN  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &lt NAV DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo FUN
             >;
         };
 
-        layer_keypad {
+        layer_KP {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &trans                                                                 &mo 3  &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
+ &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &trans                                                                 &mo MOD  &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
    &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                 &none   &kp Y   &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_MINUS   &kp BSLH
-   &kp ESC      &mt LCTL A     &mt LALT S     &mt LSHFT D      &mt LGUI F   &kp G               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &kp H   &kp KP_N4     &kp KP_N5      &kp KP_N6      &kp KP_PLUS    &kp SQT
+   &kp ESC      &hm LCTL A     &hm LALT S     &hm LSHFT D      &hm LGUI F   &kp G               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &kp H   &kp KP_N4     &kp KP_N5      &kp KP_N6      &kp KP_PLUS    &kp SQT
  &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                 &kp HOME                  &kp PG_UP                         &kp N   &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_ENTER  &kp RSHFT
-     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &kp UP      &kp DOWN     &kp KP_DOT         &kp RBKT      &mo 2
+     &mo FUN  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC    &lt NAV DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &kp UP      &kp DOWN     &kp KP_DOT         &kp RBKT      &mo FUN
             >;
         };
 
-        layer_fn {
+        layer_FUN {
             bindings = <
- &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6            &tog 1                                                   &mo 3  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+ &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6            &tog KP                                                   &mo MOD  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
  &trans  &trans  &trans  &trans  &trans  &trans             &none                                                   &none  &trans  &trans  &trans   &trans   &trans   &trans
  &trans  &trans  &trans  &trans  &trans  &trans             &none  &trans  &trans                  &trans  &trans   &none  &trans  &trans  &trans   &trans   &trans   &trans
  &trans  &trans  &trans  &trans  &trans  &trans                            &trans                  &trans                  &trans  &trans  &trans   &trans   &trans   &trans
@@ -75,7 +74,27 @@
             >;
         };
 
-        layer_mod {
+        layer_NAV {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &tog KP                                                   &mo MOD  &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &none                                                   &none  &trans  &trans  &kp UP   &trans   &trans   &trans
+&trans  &kp LCTL  &kp LALT  &kp LSHFT  &kp LGUI  &trans             &none  &trans  &trans                  &trans  &trans   &none  &trans  &kp LEFT  &kp DOWN   &kp RIGHT   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans                  &trans                  &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans                  &trans  &trans  &trans          &trans  &trans   &trans   &trans   &trans
+            >;
+        };
+
+        layer_SYM {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &tog KP                                                   &mo MOD  &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &none                                                   &none  &trans  &trans  &kp UP   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &none  &trans  &trans                  &trans  &trans   &none  &trans  &kp LEFT  &kp DOWN   &kp RIGHT   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans                  &trans                  &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans                  &trans  &trans  &trans          &trans  &trans   &trans   &trans   &trans
+            >;
+        };
+
+        layer_MOD {
             bindings = <
   &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &none                                                                                  &trans   &none       &none            &none       &none       &none   &none
   &none         &none         &none         &none         &none         &none                       &bootloader                                                                             &bootloader   &none       &none            &none       &none       &none   &none
