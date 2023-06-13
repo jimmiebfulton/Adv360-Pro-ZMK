@@ -92,11 +92,11 @@
 
         layer_NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &tog KP                                                  &mo MOD &trans     &trans       &trans    &trans       &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans             &none                                                   &none   &kp PG_UP  &kp LG(LBRC) &kp UP    &kp LG(RBRC) &trans   &trans
-&trans  &kp LCTL  &kp LALT  &kp LSHFT  &kp LGUI  &trans             &none  &trans  &trans         &trans  &trans   &none   &kp PG_DN  &kp LEFT     &kp DOWN  &kp RIGHT    &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                            &trans                  &trans                   &trans     &trans       &trans    &trans       &trans   &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans                  &trans  &trans  &trans              &trans       &trans    &trans       &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &tog KP                                                  &mo MOD &trans     &trans           &trans     &trans           &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &none                                                   &none   &kp PG_UP  &kp LG(LBRC)     &kp UP     &kp LG(RBRC)     &trans   &trans
+&trans  &kp LCTL  &kp LALT  &kp LSHFT  &kp LGUI  &trans             &none  &trans  &trans         &trans  &trans   &none   &kp PG_DN  &kp LEFT         &kp DOWN   &kp RIGHT        &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans                  &trans                   &trans     &kp LG(LS(LBRC)) &trans &kp LG(LS(RBRC)) &trans   &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans                  &trans  &trans  &trans              &trans           &trans     &trans           &trans   &trans
             >;
         };
 
