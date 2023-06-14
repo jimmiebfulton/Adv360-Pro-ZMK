@@ -94,7 +94,7 @@
 &kp TAB    &kp Q       &kp W       &kp E        &kp R       &kp T       &kp N1                                                                                  &kp N3   &kp Y   &kp U        &kp I     &kp O     &kp P   &kp BSLH
 &kp ESC    &hm LCTL A  &hm LALT S  &hm LSHFT D  &hm LGUI F  &rlt SYM G  &kp N2         &kp LGUI     &kp LALT                           &kp RCTRL &kp RGUI              &kp N4   &rlt SYM H    &hm RGUI J      &hm RSHFT K     &hm RALT L  &hm RCTRL SEMI    &kp SQT
 &kp LSHFT  &kp Z       &kp X       &kp C        &kp V       &kp B                                   &rlt NUM HOME                                &rlt FUN PG_UP                  &kp N &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-&mo MED    &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                    &kp BSPC  &rlt NAV DEL &hm HYPER END    &rlt HYPER PG_DN  &kp ENTER &kp SPACE                             &kp UP &kp DOWN  &kp LBKT  &kp RBKT      &mo MED
+&mo MED    &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                    &kp BSPC  &rlt NAV DEL &hm HYPER END    &hm HYPER PG_DN  &kp ENTER &kp SPACE                             &kp UP &kp DOWN  &kp LBKT  &kp RBKT      &mo MED
             >;
         };
 
