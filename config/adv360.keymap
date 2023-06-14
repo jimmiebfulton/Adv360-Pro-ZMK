@@ -152,7 +152,7 @@
             bindings = <
 &none &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4 &none                                          &none       &none  &none        &rgb_ug RGB_TOG  &none        &none &none
 &none &none         &none         &none         &none          &none        &bootloader                                    &bootloader &none  &bl BL_DEC   &bl BL_TOG       &bl BL_INC   &none &none
-&none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FIs &none        &none        &none &none   &none  &none        &none       s&none &kp C_PREV   &kp C_PP         &kp C_NEXT   &none &none
+&none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FIs &none        &none        &none &none   &none  &none        &none       &none &kp C_PREV   &kp C_PP         &kp C_NEXT   &none &none
 &none &none         &none         &none         &none          &none                           &none   &none                           &none  &kp C_VOL_DN &kp C_MUTE       &kp C_VOL_UP &none &none
 &none &none         &none         &none         &none                           &none  &none &kp LOCK_SCR   &kp SLEEP_DIS  &none  &none                    &none        &none            &none        &none &none
             >;
