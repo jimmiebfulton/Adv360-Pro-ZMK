@@ -29,6 +29,19 @@
 
 #define HYPER LS(LC(LA(LGUI)))
 
+// Screen Shot to Clip Board
+#define SCRSHT_CB LS(LC(LG(N3)))
+// Screen Shot to File
+#define SCRSHT_FI LS(LG(N3))
+// Select Shot to Clip Board
+#define SLTSHT_CB LS(LC(LG(N4)))
+// Select Shot to File
+#define SLTSHT_FI LS(LG(N4))
+// Lock Screen
+#define LOCK_SCR  LC(LG(Q))
+#define SLEEP_DIS LS(LC(LA(LG(K))))
+
+
 / {
   behaviors {
     #include "macros.dtsi"
@@ -40,6 +53,7 @@
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
         quick-tap-ms = <175>;
+        global-quick-tap;
         bindings = <&kp>, <&kp>;
     };
 
@@ -57,6 +71,7 @@
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
         quick-tap-ms = <175>;
+        global-quick-tap;
         bindings = <&mo>, <&kp>;
     };
   };
@@ -75,11 +90,11 @@
 
         default_QUERTY {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog COLEMAK                                                                &mo MOD  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
-   &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                &none   &kp Y   &kp U      &kp I     &kp O     &kp P   &kp BSLH
-   &kp ESC      &hm LCTL A     &hm LALT S     &hm LSHFT D      &hm LGUI F   &rlt SYM G               &mo SYM  &kp LGUI  &kp LALT                  &kp RCTRL   &kp RGUI      &mo SYM   &rlt SYM H   &hm RGUI J      &hm RSHFT K     &hm RALT L  &hm RCTRL SEMI    &kp SQT
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                &rlt NUM HOME                  &rlt FUN PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-     &mo MED  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &rlt NAV DEL   &hm HYPER END                  &rlt HYPER PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo MED
+&kp EQUAL  &kp N1      &kp N2      &kp N3       &kp N4      &kp N5      &tog COLEMAK                                                                            &mo MOD  &kp N6  &kp N7       &kp N8    &kp N9    &kp N0  &kp MINUS
+&kp TAB    &kp Q       &kp W       &kp E        &kp R       &kp T       &kp N1                                                                                  &kp N3   &kp Y   &kp U        s&kp I     &kp O     &kp P   &kp BSLH
+&kp ESC    &hm LCTL A  &hm LALT S  &hm LSHFT D  &hm LGUI F  &rlt SYM G  &kp N2         &kp LGUI     &kp LALT                           &kp RCTRL &kp RGUI              &kp N4   &rlt SYM H    &hm RGUI J      &hm RSHFT K     &hm RALT L  &hm RCTRL SEMI    &kp SQT
+&kp LSHFT  &kp Z       &kp X       &kp C        &kp V       &kp B                                   &rlt NUM HOME                                &rlt FUN PG_UP                  &kp N &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+&mo MED    &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                    &kp BSPC  &rlt NAV DEL &hm HYPER END    &rlt HYPER PG_DN  &kp ENTER &kp SPACE                             &kp UP &kp DOWN  &kp LBKT  &kp RBKT      &mo MED
             >;
         };
 
@@ -135,11 +150,11 @@
 
         layer_MED {
             bindings = <
-&none &none &none &none &none &none &none                                          &none &none &none &none &none &none &none
-&none &none &none &none &none &none &none                                          &none &none &bl BL_DEC &bl BL_TOG &bl BL_INC &none &none
-&none &none &none &none &none &none &none        &none &none   &none  &none        &none &none &kp C_PREV &kp C_PP &kp C_NEXT &none &none
-&none &none &none &none &none &none                    &none   &none                     &none &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none &none
-&none &none &none &none &none             &none  &none &none   &none  &none  &none             &none &none &none &none &none
+&none &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4 &none                                          &none       &none  &none        &rgb_ug RGB_TOG  &none        &none &none
+&none &none         &none         &none         &none          &none        &bootloader                                    &bootloader &none  &bl BL_DEC   &bl BL_TOG       &bl BL_INC   &none &none
+&none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FIs &none        &none        &none &none   &none  &none        &none       s&none &kp C_PREV   &kp C_PP         &kp C_NEXT   &none &none
+&none &none         &none         &none         &none          &none                           &none   &none                           &none  &kp C_VOL_DN &kp C_MUTE       &kp C_VOL_UP &none &none
+&none &none         &none         &none         &none                           &none  &none &kp LOCK_SCR   &kp SLEEP_DIS  &none  &none                    &none        &none            &none        &none &none
             >;
         };
 
