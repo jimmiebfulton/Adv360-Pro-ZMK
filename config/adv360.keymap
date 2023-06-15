@@ -25,7 +25,6 @@
 #define NAV       4
 #define SYM       5
 #define MED       6
-#define MOD       7
 
 #define HYPER LS(LC(LA(LGUI)))
 
@@ -153,16 +152,6 @@
 &none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FI &none         &rgb_ug RGB_MEFS_CMD 5  &none &none   &none  &none                         &rgb_ug RGB_MEFS_CMD 5       &none &kp C_PREV   &kp C_PP         &kp C_NEXT   &none &none
 &none &none         &none         &none         &none          &none                                      &none   &none                                &none  &kp C_VOL_DN &kp C_MUTE       &kp C_VOL_UP &none &none
 &none &none         &none         &none         &none                                      &none  &none &kp LOCK_SCR   &kp SLEEP_DIS  &none  &none                    &none        &none            &none        &none &none
-            >;
-        };
-
-      layer_MOD {
-          bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &none                                                                                  &trans   &none       &none            &none       &none       &none   &none
-&none  &none         &none         &none         &none         &none                       &bootloader                                                                             &bootloader   &none       &none            &none       &none       &none   &none
-&none  &none         &none         &none         &none         &none            &rgb_ug RGB_MEFS_CMD 5       &none  &bt BT_CLR                  &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5   &none       &none            &none       &none       &none   &none
-&none  &none         &none         &none         &none         &none                                                     &none                       &none                                       &none       &none            &none       &none       &none   &none
-&none  &none         &none         &none         &none                                      &bl BL_INC  &bl BL_DEC       &none                  &bl BL_TOG       &none                   &none          &bl BL_TOG  &rgb_ug RGB_TOG  &bl BL_INC  &bl BL_DEC   &none
             >;
         };
 
