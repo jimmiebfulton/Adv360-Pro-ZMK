@@ -40,3 +40,9 @@ ZMK_MACRO(m_r_debug,
     tap-ms = <40>;
     bindings = <&kp LBRC &kp COLON &kp QMARK &kp RBRC>;
 )
+
+ZMK_MACRO(m_r_tests,
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp HASH &kp LBKT &kp C &kp F &kp G &kp LPAR &kp T &kp E &kp S &kp T &kp RPAR &kp RBKT &kp ENTER &kp M &kp O &kp D &kp SPACE &kp T &kp E &kp S &kp T &kp SPACE &kp LBRC &kp ENTER &kp ENTER &kp RBRC &kp UP &kp TAB>;
+)
