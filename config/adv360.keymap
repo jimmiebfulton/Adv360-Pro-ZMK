@@ -49,6 +49,8 @@
 #define LOCK_SCR  LC(LG(Q))
 #define SLEEP_DIS LS(LC(LA(LG(K))))
 
+#define COMBO_TIMEOUT 300
+
 
 / {
   behaviors {
@@ -85,27 +87,27 @@
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <46 59>;
             bindings = <&cwm>;
         };
         combo_media_layer_left {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <60 35>;
             bindings = <&mo MED>;
         };
         combo_media_layer_right {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <75 38>;
             bindings = <&mo MED>;
         };
         combo_macro_layer_left {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <60 66>;
             bindings = <&mo MAC>;
         };
         combo_macro_layer_right {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <75 69>;
             bindings = <&mo MAC>;
         };
