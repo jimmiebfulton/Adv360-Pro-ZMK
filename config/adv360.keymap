@@ -188,7 +188,7 @@
             bindings = <
 &none &none &none &none &none &none &none                                          &none &none &none &none &none &none &none
 &none &none &none &none &none &none &none                                          &none &none &none &none &none &none &none
-&none &none &none &m_r_tests &none &none &none        &none &none   &none  &none        &none &none &none &m_r_debug &none &none &none
+&none &none &none &m_r_tests &m_r_test &none &none        &none &none   &none  &none        &none &none &none &m_r_debug &none &none &none
 &none &none &none &none &none &none                    &none   &none                     &none &none &none &none &none &none
 &none &none &none &none &none             &none  &none &none   &none  &none  &none              &none &none &none &none &none
             >;
