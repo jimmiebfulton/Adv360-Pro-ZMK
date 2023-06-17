@@ -34,3 +34,9 @@ label = "macro_kinesis";
 #binding-cells = <0>;
 bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
 };
+
+ZMK_MACRO(m_r_debug,
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LBRC &kp COLOR &kp QMARK &kp RBRC>;
+);

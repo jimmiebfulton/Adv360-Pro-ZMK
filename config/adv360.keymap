@@ -33,6 +33,7 @@
 #define NAV       4
 #define SYM       5
 #define MED       6
+#define MAC       7
 
 #define HYPER LS(LC(LA(LGUI)))
 
@@ -90,13 +91,23 @@
         };
         combo_media_layer_left {
             timeout-ms = <50>;
-            key-positions = <46 59>;
+            key-positions = <60 35>;
             bindings = <&mo MED>;
         };
         combo_media_layer_right {
             timeout-ms = <50>;
-            key-positions = <46 59>;
+            key-positions = <75 38>;
             bindings = <&mo MED>;
+        };
+        combo_macro_layer_left {
+            timeout-ms = <50>;
+            key-positions = <60 66>;
+            bindings = <&mo MED>;
+        };
+        combo_macro_layer_right {
+            timeout-ms = <50>;
+            key-positions = <75 69>;
+            bindings = <&mo MAC>;
         };
     };
 
@@ -169,7 +180,17 @@
 &none &none         &none         &none         &none          &none        &bootloader                                                                &bootloader &none  &bl BL_DEC   &bl BL_TOG       &bl BL_INC   &none &none
 &none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FI &none         &rgb_ug RGB_MEFS_CMD 5  &none &none   &none  &none                         &rgb_ug RGB_MEFS_CMD 5       &none &kp C_PREV   &kp C_PP         &kp C_NEXT   &none &none
 &none &none         &none         &none         &none          &none                                      &none   &none                                &none  &kp C_VOL_DN &kp C_MUTE       &kp C_VOL_UP &none &none
-&none &none         &none         &none         &none                                      &none  &none &kp LOCK_SCR   &kp SLEEP_DIS  &none  &none                    &none        &none            &none        &none &none
+&none &none         &none         &none         &none                                          &kp LOCK_SCR  &none &none   &none  &none  &kp SLEEP_DIS                    &none        &none            &none        &none &none
+            >;
+        };
+
+        layer_MACROS {
+            bindings = <
+&none &none &none &none &none &none &none                                          &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none                                          &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none        &none &none   &none  &none        &none &none &none &m_r_debug &none &none &none
+&none &none &none &none &none &none                    &none   &none                     &none &none &none &none &none &none
+&none &none &none &none &none             &none  &none &none   &none  &none  &none              &none &none &none &none &none
             >;
         };
 
