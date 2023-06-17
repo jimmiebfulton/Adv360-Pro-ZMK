@@ -102,7 +102,7 @@
         combo_macro_layer_left {
             timeout-ms = <50>;
             key-positions = <60 66>;
-            bindings = <&mo MED>;
+            bindings = <&mo MAC>;
         };
         combo_macro_layer_right {
             timeout-ms = <50>;
