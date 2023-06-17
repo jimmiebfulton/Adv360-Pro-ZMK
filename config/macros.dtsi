@@ -50,5 +50,5 @@ ZMK_MACRO(m_r_tests,
 ZMK_MACRO(m_r_test,
     wait-ms = <30>;
     tap-ms = <30>;
-    bindings = <&kp HASH &kp LBKT &kp T &kp E &kp S &kp T &kp RBKT &kp ENTER &kp F &kp N &kp SPACE &kp &kp T &kp E &kp S &kp T &kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp ENTER>;
+    bindings = <&kp HASH &kp LBKT &kp T &kp E &kp S &kp T &kp RBKT &kp ENTER &kp F &kp N &kp SPACE &kp T &kp E &kp S &kp T &kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp ENTER>;
 )
