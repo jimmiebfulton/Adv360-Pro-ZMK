@@ -39,4 +39,4 @@ ZMK_MACRO(m_r_debug,
     wait-ms = <40>;
     tap-ms = <40>;
     bindings = <&kp LBRC &kp COLOR &kp QMARK &kp RBRC>;
-);
+)
