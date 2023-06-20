@@ -29,12 +29,13 @@
 #define QUERTY    0
 #define COLEMAK   1
 #define WINDOWS   2
-#define NUM       3
-#define FUN       4
-#define NAV       5
-#define SYM       6
-#define MED       7
-#define MAC       8
+#define GAMING    3
+#define NUM       4
+#define FUN       5
+#define NAV       6
+#define SYM       7
+#define UTILS     8
+#define MACROS    9
 
 #define HYPER LS(LC(LA(LGUI)))
 
@@ -95,22 +96,22 @@
         combo_media_layer_left {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <60 35>;
-            bindings = <&mo MED>;
+            bindings = <&mo UTILS>;
         };
         combo_media_layer_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <75 38>;
-            bindings = <&mo MED>;
+            bindings = <&mo UTILS>;
         };
         combo_macro_layer_left {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <60 66>;
-            bindings = <&mo MAC>;
+            bindings = <&mo MACROS>;
         };
         combo_macro_layer_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <75 69>;
-            bindings = <&mo MAC>;
+            bindings = <&mo MACROS>;
         };
     };
 
@@ -119,9 +120,9 @@
 
         default_QUERTY {
             bindings = <
-&kp EQUAL  &kp N1      &kp N2      &kp N3       &kp N4      &kp N5      &tog COLEMAK                                                                            &mo MED  &kp N6  &kp N7       &kp N8    &kp N9    &kp N0  &kp MINUS
-&kp TAB    &kp Q       &kp W       &kp E        &kp R       &kp T       &kp N1                                                                                  &kp N3   &kp Y   &kp U        &kp I     &kp O     &kp P   &kp BSLH
-&kp ESC    &hm LCTL A  &hm LALT S  &hm LSHFT D  &hm LGUI F  &rlt SYM G  &kp N2         &kp LGUI     &kp LALT                           &kp RCTRL &kp RGUI              &kp N4   &rlt SYM H    &hm RGUI J      &hm RSHFT K     &hm RALT L  &hm RCTRL SEMI    &kp SQT
+&kp EQUAL  &kp N1      &kp N2      &kp N3       &kp N4      &kp N5      &tog COLEMAK                                                                            &mo UTILS  &kp N6  &kp N7       &kp N8    &kp N9    &kp N0  &kp MINUS
+&kp TAB    &kp Q       &kp W       &kp E        &kp R       &kp T       &tog WINDOWS                                                                                  &kp N3   &kp Y   &kp U        &kp I     &kp O     &kp P   &kp BSLH
+&kp ESC    &hm LCTL A  &hm LALT S  &hm LSHFT D  &hm LGUI F  &rlt SYM G  &tog GAMING         &kp LGUI     &kp LALT                           &kp RCTRL &kp RGUI              &kp N4   &rlt SYM H    &hm RGUI J      &hm RSHFT K     &hm RALT L  &hm RCTRL SEMI    &kp SQT
 &kp LSHFT  &kp Z       &kp X       &kp C        &kp V       &kp B                                   &rlt NUM HOME                                &rlt FUN PG_UP                  &kp N &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
 &none    &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                    &kp BSPC  &rlt NAV DEL &hm HYPER END    &hm HYPER PG_DN  &kp ENTER &kp SPACE                             &kp UP &kp DOWN  &kp LBKT  &kp RBKT      &none
             >;
@@ -144,6 +145,16 @@
 &trans  &trans  &trans  &trans &trans  &trans  &trans          &kp LCTRL &trans   &kp LGUI &kp RCTRL         &trans &trans &trans &trans &trans &trans &trans
 &trans  &trans  &trans  &trans &trans  &trans                          &trans      &trans                        &trans &trans &trans &trans &trans &trans
 &trans  &trans  &trans  &trans &trans                  &trans  &trans  &trans      &trans  &trans  &trans               &trans &trans &trans &trans &trans
+            >;
+        };
+
+        layer_GAMING {
+            bindings = <
+&trans  &trans  &trans  &trans &trans  &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans  &trans          &trans   &trans     &trans  &trans                &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans                           &trans      &trans                        &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans                  &trans  &kp DEL  &trans      &trans  &trans  &trans              &trans &trans &trans &trans &trans
             >;
         };
 
@@ -179,7 +190,7 @@
 
         layer_SYMBOLS {
             bindings = <
-&none &none     &none    &none    &none     &none      &trans                                              &mo MED &none      &none &none &none &none &none
+&none &none     &none    &none    &none     &none      &trans                                              &mo UTILS &none      &none &none &none &none &none
 &none &kp MINUS &kp PLUS &kp EXCL &kp EQUAL &kp UNDER  &none                                               &none   &none      &kp CARET &kp COLON &kp QMARK &kp DLLR &trans
 &none &kp LBKT  &kp LT  &kp GT &kp RBKT  &kp GRAVE     &none          &trans  &trans      &trans  &trans   &none   &kp TILDE  &kp LBRC  &kp LPAR  &kp RPAR  &kp RBRC &kp DQT
 &none &kp PRCNT  &kp STAR  &kp HASH  &kp AT  &trans                           &trans      &trans                   &trans     &kp PIPE  &kp AMPS  &kp BSLH  &kp FSLH &kp SQT
@@ -187,13 +198,13 @@
             >;
         };
 
-        layer_MEDIA {
+        layer_UTILS {
             bindings = <
-&none &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4 &tog WINDOWS                                                                 &none       &none  &none        &rgb_ug RGB_TOG  &none        &none &bt BT_CLR
-&none &none         &none         &none         &none          &none        &bootloader                                                                &bootloader &none  &bl BL_DEC   &bl BL_TOG       &bl BL_INC   &none &none
-&none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FI &none         &rgb_ug RGB_MEFS_CMD 5  &none &none   &none  &none                         &rgb_ug RGB_MEFS_CMD 5       &none &kp C_PREV   &kp C_PP         &kp C_NEXT   &none &none
-&none &none         &none         &none         &none          &none                                      &none   &none                                &none  &kp C_VOL_DN &kp C_MUTE       &kp C_VOL_UP &none &none
-&none &none         &none         &none         &none                                 &none &kp LOCK_SCR  &none   &none  &kp SLEEP_DIS  &none                    &none        &none            &none        &none &none
+&none &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4 &trans                                                &none                   &none             &none         &rgb_ug RGB_TOG  &none         &none  &bt BT_CLR
+&none &none         &none         &none         &none          &none        &bootloader                                           &bootloader             &none             &bl BL_DEC    &bl BL_TOG       &bl BL_INC    &none  &none
+&none &kp SCRSHT_CB &kp SCRSHT_FI &kp SLTSHT_CB &kp SLTSHT_FI &none         &rgb_ug RGB_MEFS_CMD 5  &none &none   &none  &none    &rgb_ug RGB_MEFS_CMD 5  &none             &kp C_PREV    &kp C_PP         &kp C_NEXT    &none  &none
+&none &none         &none         &none         &none          &none                                      &none   &none                                   &none             &kp C_VOL_DN  &kp C_MUTE       &kp C_VOL_UP  &none  &none
+&none &none         &none         &none         &none                                 &none &kp LOCK_SCR  &none   &none  &kp SLEEP_DIS  &none                               &none         &none            &none         &none  &none
             >;
         };
 
