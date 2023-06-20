@@ -138,23 +138,25 @@
             >;
         };
 
+// Swaps positions for the GUI and Ctrl keys
         layer_WINDOWS {
             bindings = <
 &trans  &trans  &trans  &trans &trans  &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
 &trans  &trans  &trans  &trans &trans  &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
-&trans  &trans  &trans  &trans &trans  &trans  &trans          &kp LCTRL &trans   &kp LGUI &kp RCTRL         &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans  &trans          &kp LCTRL &trans   &kp LGUI &kp RCTRL      &trans &trans &trans &trans &trans &trans &trans
 &trans  &trans  &trans  &trans &trans  &trans                          &trans      &trans                        &trans &trans &trans &trans &trans &trans
 &trans  &trans  &trans  &trans &trans                  &trans  &trans  &trans      &trans  &trans  &trans               &trans &trans &trans &trans &trans
             >;
         };
 
+// Removes dual-function keys, allowing them to be held down in games.  Generally applied over the WINDOWS layer.
         layer_GAMING {
             bindings = <
-&trans  &trans  &trans  &trans &trans  &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
-&trans  &trans  &trans  &trans &trans  &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
-&trans  &trans  &trans  &trans &trans  &trans  &trans          &trans   &trans     &trans  &trans                &trans &trans &trans &trans &trans &trans
-&trans  &trans  &trans  &trans &trans  &trans                           &trans      &trans                        &trans &trans &trans &trans &trans &trans
-&trans  &trans  &trans  &trans &trans                  &trans  &kp DEL  &trans      &trans  &trans  &trans              &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans  &trans                                                      &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans  &trans                                                      &trans &trans &trans &trans &trans &trans &trans
+&trans  &kp A   &kp S   &kp D  &kp F   &kp G   &trans          &trans   &trans      &trans  &trans         &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans  &trans                           &kp HOME    &trans                        &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans &trans                  &trans  &kp DEL  &kp END     &trans  &trans  &trans               &trans &trans &trans &trans &trans
             >;
         };
 
